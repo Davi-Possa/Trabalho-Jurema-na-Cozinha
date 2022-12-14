@@ -1,1 +1,0 @@
-# Trabalho-Jurema-na-Cozinha
