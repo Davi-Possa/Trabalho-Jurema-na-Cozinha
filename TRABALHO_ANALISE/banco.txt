@@ -1,0 +1,44 @@
+CREATE TABLE USER (
+    id_user int,
+    nome_user varchar(100) not null,
+    senha_user varchar(16) not null,
+    PRIMARY KEY (id_user));
+
+CREATE TABLE TEMPERATURA (
+    id_registro int,
+    celsius float not null,
+    data_analise date not null,
+
+    PRIMARY KEY(id_registro));
+
+CREATE TABLE UMIDADE (
+    id_registro int,
+    umidade float not null,
+    data_analise date not null,
+
+    PRIMARY KEY(id_registro));
+
+CREATE TABLE TEMPERATURA_SOLO (
+    id_registro_solo int,
+    celsius_solo float not null,
+    data_analise_solo date not null,
+
+    PRIMARY KEY(id_registro_solo));
+
+CREATE TABLE UMIDADE_SOLO (
+    id_registro_solo int,
+    umidade_solo float not null,
+    data_analise_solo date not null,
+
+    PRIMARY KEY(id_registro_solo));
+
+CREATE TABLE IRRIGACAO (
+    id_irrigacao int,
+    quantidade_agua float not null,
+    data_irrigacao date not null,
+    umidade_solo float not null,
+    celsius_solo float not null,
+
+    PRIMARY KEY(id_irrigacao),
+    FOREIGN KEY(umidade_solo) references UMIDADE_SOLO(umidade_solo),
+    FOREIGN KEY(celsius_solo) references TEMPERATURA_SOLO(celsius_solo));

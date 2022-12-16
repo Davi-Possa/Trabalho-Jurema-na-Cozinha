@@ -36,3 +36,13 @@ checkbox.addEventListener("change", ({target}) => {
     target.checked ? changeColors(darkMode) : changeColors (initialColors)
 })
 
+var temperatura = document.getElementById("tempe")
+var umidade = document.getElementById("umida")
+var img_temp = document.getElementById("temp")
+var valor_banco_temp = 22.6
+var valor_banco_umid = 55
+
+if(valor_banco_temp > 30) {
+    document.getElementById("tempe") = valor_banco_temp
+    document.getElementById("temp").src = ('./IMG/FRIO.png');
+}
